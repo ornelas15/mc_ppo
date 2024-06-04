@@ -2,7 +2,7 @@
 
 **Author:** David Alexandre Ornelas  
 **Degree:** Master's in Robotic and Intelligent Systems  
-**Institution:** IEETA, University of Aveiro
+**Institution:** IEETA, University of Aveiro 
 **Micro-Credential**
 
 ### Introduction
