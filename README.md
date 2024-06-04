@@ -1,4 +1,4 @@
-# Micro Credential: Oriented-Object Programming in C++
+# Micro: Oriented-Object Programming in C++
 
 **Author:** David Alexandre Ornelas  
 **Degree:** Master's in Robotic and Intelligent Systems  
