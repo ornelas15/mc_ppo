@@ -1,0 +1,34 @@
+
+Session 1 of PPOC++:
+
+- Tutorias:
+	https://en.cppreference.com/w/
+	https://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.html
+
+- Compilação e execução:
+	- g++ file.cpp
+	- ./a.out
+	
+	Save execution file with desired name:
+		g++ file.cpp -o name.out
+	Run:
+		./file.out
+	Both:
+		g++ file.cpp -o name.out && ./name.out
+		
+
+- Ignorar o que vem aseguir ao namespace:
+	- using namespace std;
+
+- Visualizar ou ler valores:	
+	- cout (visualizar terminal de saída)
+	- cin (ler dados)
+	
+
+- Operadores:
+	- << (encaminha tudo o que está à direita para o objeto à esquerda)
+
+
+
+
+
