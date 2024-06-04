@@ -1,7 +1,9 @@
 
 Session 1 of PPOC++:
 
-- Diferença entre objetos e classes
+- Tutorias:
+	https://en.cppreference.com/w/
+	https://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.html
 
 - Compilação e execução:
 	- g++ file.cpp
