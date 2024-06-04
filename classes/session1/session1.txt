@@ -3,7 +3,15 @@ Session 1 of PPOC++:
 
 - Diferença entre objetos e classes
 
-
+- Compilação e execução:
+	- g++ file.cpp
+	- ./a.out
+	
+	Save execution file with desired name:
+		g++ file.cpp -o name.out
+	Run:
+		./file.out
+		
 
 
 
