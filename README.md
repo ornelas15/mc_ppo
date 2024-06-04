@@ -1,8 +1,9 @@
-# Micro: Oriented-Object Programming in C++
+# Oriented-Object Programming in C++
 
 **Author:** David Alexandre Ornelas  
 **Degree:** Master's in Robotic and Intelligent Systems  
 **Institution:** IEETA, University of Aveiro
+**Micro-Credential**
 
 ### Introduction
 Repository with ...
