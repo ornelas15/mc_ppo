@@ -13,8 +13,17 @@ Session 1 of PPOC++:
 		g++ file.cpp -o name.out
 	Run:
 		./file.out
+	Both:
+		g++ file.cpp -o name.out && ./name.out
 		
 
+- Ignorar o que vem aseguir ao namespace:
+	- using namespace std;
+
+- Visualizar ou ler valores:	
+	- cout (visualizar terminal de saída)
+	- cin (ler dados)
+	
 
 
 
