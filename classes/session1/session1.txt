@@ -25,7 +25,8 @@ Session 1 of PPOC++:
 	- cin (ler dados)
 	
 
-
+- Operadores:
+	- << (encaminha tudo o que está à direita para o objeto à esquerda)
 
 
 
