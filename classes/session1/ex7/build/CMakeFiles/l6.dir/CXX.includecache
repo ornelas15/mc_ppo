@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ornelas/Desktop/Ornelas/mc_ppo/classes/session1/ex6-7/l6.cpp
+stdio.h
+-
+point.h
+/home/ornelas/Desktop/Ornelas/mc_ppo/classes/session1/ex6-7/point.h
+
+/home/ornelas/Desktop/Ornelas/mc_ppo/classes/session1/ex6-7/point.cpp
+stdio.h
+-
+point.h
+/home/ornelas/Desktop/Ornelas/mc_ppo/classes/session1/ex6-7/point.h
+
+/home/ornelas/Desktop/Ornelas/mc_ppo/classes/session1/ex6-7/point.h
+

@@ -16,8 +16,6 @@ int main() {
   return 0;
 }
 
-
-
 // To run makefile, use make l6
 // and ./l6
 
