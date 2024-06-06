@@ -19,3 +19,28 @@ Session 2 of PPOC++:
 	- faz algo e decide no fim
 - while:
 	- decide e faz algo
+	
+	
+	
+- dynamic memory (important):
+	- stack: all vars take memory from stack
+	- heap: unused memory, can be used when program runs
+	
+	- can allocate memory with special operator and remove
+	
+	pvalue = new var[20]; -> saves the bytes needed for that moment
+	delete [] pvalue;     -> delete array pointed
+	
+	
+- strings:
+	- array de chars
+	- class string: saves and manipulates sequences of characters.
+	- class: conjunto de dados com conjunto de funções que permitem manipular os dados
+	
+	
+	
+	
+	
+	
+	
+
