@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/l6.dir/l6.cpp.o CMakeFiles/l6.dir/point.cpp.o  -o l6 
