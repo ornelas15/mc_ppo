@@ -30,6 +30,9 @@ int main(){
 	// ASCI Code means D > a but D < A
 	cout << name.compare("David") << endl;
 
+	// at() -> returns the character at the specified index
+	// [] -> same as at(), more efficient
+
 	return 0;
 
 
