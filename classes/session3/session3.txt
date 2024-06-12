@@ -1,0 +1,22 @@
+
+Session 3 of PPOC++:
+
+- References:
+	- & operator and it refers to an existing variable.
+	
+- Pointers vs References:
+	- similar but the difference is that the pointer, requires "*var" while after referering &var = var2, it can be called var.
+	
+
+- Functions
+
+	- Function Parameters
+	- Default Parameters (começa da direita para a esquerda, não como python)
+		
+	
+
+
+
+	
+	
+
