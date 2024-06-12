@@ -11,17 +11,17 @@ Repository that contains the classes from C++ Oriented Object Programming
 ### Session contents:  
 
 Session 1:  
-	- Basic Input/Output.
-	- Formatted Output.
-	- Types and auto.
-	- Editing, compiling and executing programs.
+	- Basic Input/Output.  
+	- Formatted Output.  
+	- Types and auto.  
+	- Editing, compiling and executing programs.  
 
 Session 2:  
-	- Decision and Loops.
-	- Arrays.
-	- Dynamic Memory.
-	- Pointers.
-	- Strings.
+	- Decision and Loops.  
+	- Arrays.  
+	- Dynamic Memory.  
+	- Pointers.  
+	- Strings.  
 	
 
 ### Installation
