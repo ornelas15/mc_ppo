@@ -26,6 +26,26 @@ void printStringExample(int n, string s = "test"){
 	}
 }
 
+// Recursive function example
+int factorial(int n){
+	if (n == 0){
+		return 1;
+	}
+	else{
+		return n * factorial(n - 1);
+	}
+}
+
+// Function overloading example
+void printNtimes(int n, string s){
+	for (int i = 0; i < n; i++){cout << s << endl;}
+}
+void printNtimes(int n, int s){
+	for (int i = 0; i < n; i++){cout << s << endl;}
+}
+
+
+
 int main(){
 
 	// ----------------------------

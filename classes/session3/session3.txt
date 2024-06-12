@@ -11,8 +11,9 @@ Session 3 of PPOC++:
 - Functions
 
 	- Function Parameters
-	- Default Parameters (começa da direita para a esquerda, não como python)
-		
+	- Default Parameters (only from right to left)
+	- Recursive Functions
+	- Overload Functions (as long as the parameters are different, functions can have same name)
 	
 
 

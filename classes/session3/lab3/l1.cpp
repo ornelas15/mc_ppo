@@ -29,7 +29,9 @@ int main(){
 
 	// Ask user for time value
 	cout << "Enter a time value in hours, minutes and seconds (format hh:mm:ss): " << endl;
-	cin >> hours >> minutes >> seconds;
+	cout << "Hours: "; cin >> hours;
+	cout << "Minutes: "; cin >> minutes;
+	cout << "Seconds: "; cin >> seconds;
 
 	// Call function and display the value of seconds
 	cout << "The time value in seconds is: " << hms_to_secs(hours, minutes, seconds) << endl;
