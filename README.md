@@ -23,6 +23,10 @@ Session 2:
 	- Pointers.  
 	- Strings.  
 	
+Session3:  
+	- Pointers.  
+	- References.  
+	- Functions.  
 
 ### Installation
 To install the necessary dependencies for this project, follow the steps below.
