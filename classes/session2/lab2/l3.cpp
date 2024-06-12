@@ -16,29 +16,59 @@ The program should call this function and then
 display the largest element and its index number.*/
 
 #include <iostream>	
-#include <iomanip>
 using namespace std;
 
 
-// Function that converts hours, minutes and seconds to seconds
-long hms_to_secs(int hours, int minutes, int seconds){
-	return hours*3600 + minutes*60 + seconds;
+// Structure that holds max value and its index from an array
+struct MaxElemArr {
+    int maxVal;
+    int idx;
+};
+
+// Function that returns max element in the array
+MaxElemArr maxint(int* array, int n) {
+    MaxElemArr maxElem;
+
+    maxElem.maxVal = array[0]; 
+    maxElem.idx = 0;           
+	// Check for the largest element in the array
+    for (int i = 1; i < n; i++) {
+        if (array[i] > maxElem.maxVal) {
+            maxElem.maxVal = array[i];
+            maxElem.idx = i;
+        }
+    }
+    return maxElem; 
 }
-
-
+	
 int main(){
 
-	// Declare variables
-	int hours, minutes, seconds;
+	int n;
+	cout << "Insert the size of the wanted array: ";
+	cin >> n;
 
-	// Ask user for time value
-	cout << "Enter a time value in hours, minutes and seconds (format hh:mm:ss): " << endl;
-	cin >> hours >> minutes >> seconds;
+	// Check if the input is valid
+	if (n <= 0) {
+		cout << "Invalid input. Please insert integers." << endl;
+		return 0;
+	}
 
-	// Call function and display the value of seconds
-	cout << "The time value in seconds is: " << hms_to_secs(hours, minutes, seconds) << endl;
+	// Dynamically allocate memory for the array
+	int* array = new int[n];
+	cout << "Insert the elements of the array: ";
+	for (int i = 0; i < n; i++) {
+		cin >> array[i];
+	}
 
+	// Find the largest element and its index in the array
+	MaxElemArr maxElem = maxint(array, n);
+	cout << "The largest element is: " << maxElem.maxVal << " at index: " << maxElem.idx << endl;
+
+	// Free the memory allocated for the array
+	delete [] array;
 	return 0;
+
+
 }
 
 

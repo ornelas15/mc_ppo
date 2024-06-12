@@ -3,7 +3,7 @@ Session 1 of PPOC++:
 
 - Tutorias:
 	https://en.cppreference.com/w/
-	https://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.html
+	https://www.tutorialspoint.com/cplusplus
 
 - Compilação e execução:
 	- g++ file.cpp
