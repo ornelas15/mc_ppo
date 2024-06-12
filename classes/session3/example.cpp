@@ -44,8 +44,13 @@ void printNtimes(int n, int s){
 	for (int i = 0; i < n; i++){cout << s << endl;}
 }
 
+// Function template example
+template <class T>
+void printGeneric(int n, T num){
+	for (int i = 0; i < n; i++){cout << num << endl;}}
 
 
+// Main function
 int main(){
 
 	// ----------------------------
@@ -74,9 +79,8 @@ int main(){
 	printStringExample(3, "Hello");
 	printStringExample(3);
 
-	//
-
-
+	//Call template function
+	printGeneric(3, 5);
 	
 	return 0;
 }

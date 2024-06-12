@@ -33,15 +33,13 @@ using namespace std;
 
 int count_alpha (const string &s){
 	int count = 0;
-	for (int i = 0; i < s.size(); i++){
-		if (isalpha(s[i])){
-			count++;
-		}
-	}
+	for (int i = 0; i < s.size(); i++)
+	{if (isalpha(s[i])){count++;}}
 	return count;
 }
 
-  
+
+
 int main(){
 
 	// Test a) function
@@ -51,6 +49,8 @@ int main(){
 	cout << "Number of alphabetic characters: " << count_alpha(s) << endl;
 
 	// Test b) function
+
+
 
 	return 0;
 }
