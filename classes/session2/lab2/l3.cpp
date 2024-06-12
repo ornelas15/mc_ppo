@@ -2,14 +2,18 @@
 Lab 2 - 06-June-2024
 David Ornelas
 
-Ex.2
-Write a function called hms_to_secs() that takes three int values - 
-for hours, minutes, and seconds - as arguments, and returns the equivalent time
-in seconds (type long). 
-Create a program that exercises this function by repeatedly obtaining 
-a time value in hours, minutes, and seconds from the user (format 12:59:59),
-calling the function, and displaying the value of seconds it returns.
-*/
+Start with a program that allows the user to input a 
+number of integers, and then stores them into an int 
+array. You can ask first to the user the number of 
+elements. Use dynamic memory allocation for the array.
+
+Write a function called maxint() that goes through the 
+array, element by element, looking for the largest one. 
+The function should take as arguments the address of the
+array and the number of elements in it, and return the 
+index number of the largest element. 
+The program should call this function and then 
+display the largest element and its index number.*/
 
 #include <iostream>	
 #include <iomanip>
