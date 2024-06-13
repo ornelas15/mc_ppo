@@ -71,7 +71,7 @@ int main(){
 	for (pair<char, int> p : letters){
 		cout << p.first << " " << p.second << endl;
 	}
-
+ 
 	return 0;
 }
 
