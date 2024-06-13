@@ -6,6 +6,7 @@ David Ornelas
 #include <iostream>	
 #include <fstream>
 #include <vector>
+#include <map>
 using namespace std;
 
 
@@ -58,6 +59,18 @@ int main(){
 		cout << *it << endl;
 	}
 
+	// Map - key value pairs
+	map<char, int> letters;
+	letters['a'] = 1;
+	letters['b'] = 2;
+	letters['c'] = 3;
+
+	cout << letters['a'] << endl;
+
+	// run all elements of the map
+	for (pair<char, int> p : letters){
+		cout << p.first << " " << p.second << endl;
+	}
 
 	return 0;
 }
