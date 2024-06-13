@@ -28,9 +28,12 @@ Session3:
 	- References.  
 	- Functions.  
 
-Session4:
+Session4:  
 	- Files.  
-	-
+	- Containers.  
+	- Iterators.  
+	- Vectors.  
+	
 
 ### Installation
 To install the necessary dependencies for this project, follow the steps below.
