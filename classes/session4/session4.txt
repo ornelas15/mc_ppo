@@ -1,0 +1,7 @@
+
+Session 4 of PPOC++:
+
+- Files
+
+- Vetors (end is the past-last element of a vector, virtual space)
+
