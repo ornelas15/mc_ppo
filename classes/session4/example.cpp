@@ -45,11 +45,17 @@ int main(){
 	// .at() generates an exception if the index is out of range - documentation
 
 
-	try {
-		cout << "Element at position 10: " << numbers.at(10) << endl;
-	}
-	catch (out_of_range &e) {
-		cerr << "Out of Range error: " << e.what() << endl;
+	// try {
+	// 	cout << "Element at position 10: " << numbers.at(10) << endl;
+	// }
+	// catch (out_of_range &e) {
+	// 	cerr << "Out of Range error: " << e.what() << endl;
+	// }
+
+
+	// iterator
+	for (vector<int>::iterator it = numbers.begin(); it != numbers.end(); it++){
+		cout << *it << endl;
 	}
 
 
