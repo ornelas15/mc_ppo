@@ -19,7 +19,9 @@ as separators) and count the number of occurrences of the keyword.
 */
 
 #include <iostream>	
-#include <iomanip>
+#include <limits>
+#include <string>
+#include <sstream>
 using namespace std;
 
 int main(){
@@ -31,23 +33,32 @@ int main(){
 
 	cout << "Enter a keyword: ";
 	cin >> keyword;
+	// Clear the buffer to avoid duplicates
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	while (true){
-
-		int sentence_len;
 		
-		// Catch a single word.
+		// Read a sentence
+		string sentence;
 		cout << "Enter a sentence: ";
-		cin >> sentence;
+		// Reads full line of text
+		getline(cin, sentence); 
 
+		// Check if the sentence is "End" and break the loop
 		if (sentence == "End"){
 			break;
 		}
 
-		sentence_len = sentence.length();
-		cout << "Sentence length: " << sentence_len << endl;
-
-
+		// Count the number of words. 
+		stringstream ss(sentence);
+		string word;
+		while (ss >> word){
+			count_word++;
+			// Count the number of occurrences of the keyword
+			if (word == keyword){
+				count_keyword++;
+			}
+		}
 	}
 
 	cout << "Number of words: " << count_word << endl;
