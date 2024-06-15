@@ -29,9 +29,11 @@ bool ispalindrome (const string &s1)
 */
 
 #include <iostream>	
+#include <sstream>
 #include <string>
 #include <cctype>
 #include <algorithm>
+#include <limits>
 using namespace std;
 
 // calculate the total number of characters in a string
@@ -63,9 +65,46 @@ void equals_or_greater (const string &s1, const string &s2){
 
 // convert a string to the corresponding one with lowercase 
 string tolower (const string &s1){
-	transform(s1.begin(), s1.end(), s1.begin(), 
+	string s2 = s1;
+	transform(s2.begin(), s2.end(), s2.begin(), 
 	[](unsigned char c){return tolower(c);});
-	return s1;}
+	return s2;}
+
+// replace in a string all occurrences of multiple spaces followed by a single space
+string replace (const string &s1){
+	string s2 = s1;
+	for (int i = 0; i < s2.size(); i++){
+		if (s2[i] == ' ' && s2[i + 1] == ' '){
+			s2.erase(i, 1);
+			i--;
+		}
+	}
+	return s2;}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+// capitalize the first letter of each word of the string
+string capitalize (const string &s1){
+	string s2 = s1;
+	for (int i = 0; i < s2.size(); i++){
+		// first word and words after space
+		if (i==0 || s2[i-1] == ' '){
+			s2[i] = toupper(s2[i]);
+		}
+	}
+	return s2;}
+
+// indicate whether a string is a palindrome or not. 
+bool ispalindrome (const string &s1){
+	string s2 = s1;
+	// Remove non-alphabetic characters
+	s2.erase(remove_if(s2.begin(), s2.end(), [](char c){return !isalpha(c);}), s2.end());
+	// Convert to lowercase
+	transform(s2.begin(), s2.end(), s2.begin(), 
+	[](unsigned char c){return tolower(c);});
+	// Check if palindrome
+	string s3 = s2;
+	reverse(s3.begin(), s3.end());
+	return s2 == s3;}
+
 
 int main(){
 
@@ -84,7 +123,8 @@ int main(){
 	char choice;
 	cout << "\n\t Enter choice: ";
 	cin >> choice;
-	cout << endl;
+	// Clear buffer
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	// Test the function
 	string s, s2;
@@ -123,12 +163,22 @@ int main(){
 			break;
 		case 'f':
 			// Test f) function
+			cout << "Enter a string: ";
+			getline(cin, s);
+			cout << "String with single spaces: " << replace(s) << endl;
 			break;
 		case 'g':
 			// Test g) function
+			cout << "Enter a string: ";
+			getline(cin, s);
+			cout << "Capitalized string: " << capitalize(s) << endl;
 			break;
 		case 'h':
 			// Test h) function
+			cout << "Enter a string: ";
+			getline(cin, s);
+			if (ispalindrome(s)){cout << "String is a palindrome" << endl;}
+			else{cout << "String is not a palindrome" << endl;}
 			break;
 		default:
 			cout << "Invalid choice" << endl;
