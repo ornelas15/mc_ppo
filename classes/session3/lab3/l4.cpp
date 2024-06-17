@@ -1,5 +1,5 @@
 /*  
-Lab 2 - 06-June-2024
+Lab 3 - 06-June-2024
 David Ornelas
 
 Ex.4: 

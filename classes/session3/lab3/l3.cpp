@@ -1,5 +1,5 @@
 /*  
-Lab 2 - 06-June-2024
+Lab 3 - 12 June-2024
 David Ornelas
 
 Start with a program that allows the user to input a 
