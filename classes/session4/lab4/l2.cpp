@@ -22,6 +22,7 @@ int main(){
 
 	// Ask for file name
 	string filename;
+	cout << "Default txt file: nums.txt" << endl;
 	cout << "Enter the name of the file: ";
 	cin >> filename;
 
