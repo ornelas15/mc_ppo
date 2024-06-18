@@ -2,7 +2,7 @@
 Lab 4 - 13-June-2024
 David Ornelas
 
-Ex.4
+Ex.5
 a)
 Write a program that asks for the filenames to be processed and 
 save them into an array of strings. Then the program should load 
