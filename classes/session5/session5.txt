@@ -1,0 +1,11 @@
+
+Session 5 of PPOC++:
+
+- Passing parameters:
+	- by reference: useful to change value of arguments
+	- by pointers:
+	- by const: 
+
+- Algorithm library
+
+- Lambda function: [](int a){return x;}

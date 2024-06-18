@@ -35,6 +35,9 @@ Session4:
 	- Vectors.  
 	- Maps.  
 		
+Session5:
+	- Containers.
+	- Algorithm Library.
 
 ### Installation
 To install the necessary dependencies for this project, follow the steps below.
