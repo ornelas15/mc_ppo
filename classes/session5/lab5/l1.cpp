@@ -30,6 +30,7 @@ using namespace std;
 
 // Function to calculate the most traded company
 void mostTraded(ifstream &file){
+	
 	// Check Volume col to find highest value
 	int maxVolume = 0;
 	string line;

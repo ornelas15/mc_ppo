@@ -9,3 +9,5 @@ Session 5 of PPOC++:
 - Algorithm library
 
 - Lambda function: [](int a){return x;}
+
+- binary.write: awaits reference pointer, not value itself.
