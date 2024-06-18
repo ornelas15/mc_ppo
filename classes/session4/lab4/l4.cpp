@@ -3,14 +3,14 @@ Lab 4 - 13-June-2024
 David Ornelas
 
 Ex.4
-File school1.csv contains the grades of students in a class. 
-Each row has the record of one student and each column has an 
-information field. The columns are separated by TAB characters. 
-The first row contains a header with the titles of the fields.  
-The files school2.csv and school3.csv have the grades of students 
-from other classes in the same format.
+a)
+Write a program that asks for the filenames to be processed and 
+save them into an array of strings. Then the program should load 
+the files and print (on the screen) the global grade sheet 
+(all classes), with the 3 columns: the student number, the 
+student name and its final grade, formatted and aligned.
 
-a) 
+b) Change your program in order to be able to write the grade sheet into an output file.
 
 */
 
@@ -18,54 +18,75 @@ a)
 #include <fstream>
 #include <string>
 #include <vector>
+#include <iomanip>
 using namespace std;
-
-int checkDoubles(const string &w){
-	int count_dups = 0;
-	for (int i = 0; i < w.length()-1; i++){
-		if (w[i] == w[i+1]){
-			count_dups++;
-		}
-	}
-	return count_dups;
-}
 
 
 int main(){
 
-	// Open dictionary file 
-	string path = "/etc/dictionaries-common/words";
-	
-	// Open file
-	ifstream file(path);
-
-	// Check if file is open
-	if (!file.is_open()) {
-		cerr << "Failed to open " << path << endl;
-		return 1;}
-	
-	// Load words from file
-	vector<string> words;
-	string word;
-	while (file >> word){
-		// Get words from file
-		words.push_back(word);      
+	// Load files into an array of strings
+	vector<string> filenames;
+	string filename;
+	cout << "\nProgram to load global grade sheets of different classes.\nType 'end' to finish and only .csv files are allowed\n \nEnter the file names to be processed: \n";
+	while (cin >> filename){ //&& filename != "end"){
+		if (filename == "end"){break;}
+		filenames.push_back(filename);
 	}
 
-	// Count words with consecutive letters
-	int count = 0;
-	for (int i = 0; i < words.size(); i++){
-		if (checkDoubles(words[i]) > 0){
-			//cout << words[i] << " - " << checkDoubles(words[i]) << endl;
-			count++;
+	// Add relative path to filenames
+	string path = "classes/session4/lab4/";
+	for (int i = 0; i < filenames.size(); i++){
+		filenames[i] = path + filenames[i] + ".csv";
+	}
+
+	// Flag to create header only once
+	bool FirstFile = true;
+
+	// Open files and print global grade sheet
+	for (int i = 0; i < filenames.size(); i++){
+		ifstream file(filenames[i]);
+		if (!file){
+			cerr << "Error: could not open file " << filenames[i] << endl;
+			return 1;
 		}
+
+ 		string line;
+        while (getline(file, line)) {
+            // Skip the header line of each file
+            if (line.find("Number") != string::npos) {
+                continue;
+            }
+
+            // Add header for the first file
+            if (FirstFile) {
+				cout << "\n" << setfill('-') 
+				<< setw(72) << "-" << endl;
+                cout << setfill(' '); 
+                cout << right << setw(12) << "Number"
+                     << setw(50) << left << " Name"
+                     << setw(10) << left << "Grade" << endl;
+                cout << setfill('-') << setw(72) << "-" << endl;
+                cout << setfill(' '); 
+                FirstFile = false;
+            }
+
+            // Parse line
+            stringstream ss(line);
+            string number, name, grade;
+            getline(ss, number, ',');
+            getline(ss, name, ',');
+            getline(ss, grade, ',');
+
+            // Print table rows
+            cout << right << setw(12) << number
+                 << left << setw(50) << " " + name
+                 << setw(10) << grade << endl;
+		}
+		file.close();
 	}
-
-	// Print total count
-	cout << "Total words with consecutive letters: " << count << endl;
-
-	// Close file
-	file.close();
+	
+	cout << setfill('-') << setw(72) << "-" << endl;
+	cout << setfill(' '); 
 
 	return 0;
 }
