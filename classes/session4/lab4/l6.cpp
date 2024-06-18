@@ -2,10 +2,8 @@
 Lab 4 - 13-June-2024
 David Ornelas
 
-Ex.5
-Implement a program that allows the user to input integer numbers and stores them into a vector. 
-The input should finish with the introduction of zero. 
-Display the stored numbers in reverse order and calculate their average.
+Ex.6
+Implement a program that simplifies management of several teams of indoor soccer (5 players). For each team, the user has to input the numbers of 5 players (all different - explore the use of the set container).  After  a team has been formed, the program should ask whether the user wants to add another team (the response can be 'y' or 'n'). Suggestion: consider the use of a vector of sets.
 
 */
 

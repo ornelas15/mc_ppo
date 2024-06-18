@@ -21,7 +21,6 @@ b) Change your program in order to be able to write the grade sheet into an outp
 #include <iomanip>
 using namespace std;
 
-//void ProcessFile()
 
 int main(){
 
