@@ -38,6 +38,11 @@ Session4:
 Session5:
 	- Containers.
 	- Algorithm Library.
+	
+Session6:
+	- Classes
+	- Construction
+	- Contents
 
 ### Installation
 To install the necessary dependencies for this project, follow the steps below.

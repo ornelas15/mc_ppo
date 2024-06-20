@@ -1,0 +1,9 @@
+
+Session 6 of PPOC++:
+
+- Classes:
+	- Definition and Construction
+	- Contents of Classes:
+		- Inheritance
+		- Pointers
+		- Polymorphism
