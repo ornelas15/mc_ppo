@@ -9,7 +9,7 @@ Name, Date, OpeningPrice, MaxPrice, MinPrice, ClosingPrice, Volume
 
 Implement functions that would calculate and print the following parameters:
 
-	a) mostTraded - the most traded company (with the largest total volume);
+	a) mostTraded - the most traded company (with the largest total value);
 
 	-b) highestDiff - company with the highest daily appreciation (difference between the opening price and the closing price);
 
@@ -21,205 +21,103 @@ Implement functions that would calculate and print the following parameters:
 
 */
 
-#include <iostream>	
+#include <iostream>
 #include <fstream>
 #include <vector>
 #include <algorithm>
 #include <string>
 #include <sstream>
 #include <iomanip>
-#include <unordered_map>
+#include <map>
+#include <numeric>
 using namespace std;
 
-// Function to find the index of a specific column
-int find_colidx(const string& col_header, const string& col_name) {
-    // Split the header column
-    stringstream split_str(col_header);
-    string col;
-    int idx = 0;
-    while (getline(split_str, col, ',')) {
-        if (col == col_name) {
-            return idx;
-        }
-        idx++;
-    }
-    return -1;  
-}
-
-// Function to find the stock with the highest trading volume
-int mostTraded(const string& filename) {
-    
+// Function to read column data from file
+map<string, vector<double>> readColData(const string& filename, int col_idx) {
     // Open the file
     ifstream file(filename);
-    // Check if the file is open
-    if (!file.is_open()) {
-        cerr << "Error: could not open file " << filename << endl;
-        return -1;}
-
-    // Declare variables (line for the header, and indexes for volume and name of the stock column)
     string line;
-    int vol_idx = -1;
-    int name_idx = -1;
+    map<string, vector<double>> col_data;
+    // Skip the header
+    getline(file, line); 
 
-    // Find index of column of the name and volume of stocks
-    if (getline(file, line)) {
-        vol_idx = find_colidx(line, "Volume");
-        name_idx = find_colidx(line, "Name");
-        if (vol_idx == -1 || name_idx == -1) {
-            cerr << "Error: column not found" << endl;
-            return -1;}}
-
-    string stock_volume;
-    double max_volume = -1;
-    // Process the data rows
+    int lineCount = 0; 
     while (getline(file, line)) {
-        stringstream split_str(line);
-        string val;
-        vector<string> row_vals;
-        while (getline(split_str, val, ',')) {row_vals.push_back(val);}
+        stringstream ss(line);
+        string name, temp;
+        double value;
 
-        // Convert the volume string to int and compare with max
-        int volume = stoi(row_vals[vol_idx]);
-        if (volume > max_volume) {
-            max_volume = volume;
-            stock_volume = row_vals[name_idx];
+        getline(ss, name, ',');  // Read the stock name
+
+        // Skip to the desired column (value)
+        for (int i = 1; i < col_idx; i++) {
+            getline(ss, temp, ',');
         }
+
+        // Read the value from the column
+        if (!(ss >> value)) { 
+            continue;
+        }
+
+        col_data[name].push_back(value);
     }
 
-    // Close the file
     file.close();
+    return col_data;
+}
 
-    // Convert max volume to normal decimal
-    cout << "Most traded company: " << stock_volume << " with " << fixed << setprecision(0) << max_volume << " Volume" << endl;
-    
-    return max_volume;
+// Function to find the stock with the highest trading value
+pair<string, double> mostTraded(const map<string, vector<double>>& value) {
+    string company;
+    double max_volume = 0;
+
+    for (const auto& pair : value) {
+        double total_volume = accumulate(pair.second.begin(), pair.second.end(), 0.0);
+        if (total_volume > max_volume) {
+            max_volume = total_volume;
+            company = pair.first;
+        }
+    }
+    return {company, max_volume};
 }
 
 // Function to find the stock with the highest daily appreciation
-int highestDiff(const string& filename) {
-    
-    // Open the file
-    ifstream file(filename);
-    // Check if the file is open
-    if (!file.is_open()) {
-        cerr << "Error: could not open file " << filename << endl;
-        return -1;}
-
-    // Declare variables (line for the header, and indexes for volume and name of the stock column)
-    string line;
-    int open_idx = -1;
-    int close_idx = -1;
-    int name_idx = -1;
-
-    // Find index of column of the name and volume of stocks
-    if (getline(file, line)) {
-        open_idx = find_colidx(line, "OpeningPrice");
-        close_idx = find_colidx(line, "ClosingPrice");
-        name_idx = find_colidx(line, "Name");
-        if (open_idx == -1 || close_idx == -1 || name_idx == -1) {
-            cerr << "Error: column not found" << endl;
-            return -1;}}
-
-    string stock_name;
-    double max_diff = -1;
-    // Process the data rows
-    while (getline(file, line)) {
-        stringstream split_str(line);
-        string val;
-        vector<string> row_vals;
-        while (getline(split_str, val, ',')) {row_vals.push_back(val);}
-
-        // Convert the volume string to int and compare with max
-        double open_price = stod(row_vals[open_idx]);
-        double close_price = stod(row_vals[close_idx]);
-        double diff = close_price - open_price;
-        if (diff > max_diff) {
-            max_diff = diff;
-            stock_name = row_vals[name_idx];
-        }
-    }
-
-    // Close the file
-    file.close();
-
-    // Convert max volume to normal decimal
-    cout << "Company with highest daily appreciation: " << stock_name << " with " << fixed << setprecision(2) << max_diff << " Price diff (open/close)" << endl;
-    
-    return max_diff;
+pair<string, double> highDiff(const map<string, vector<double>>& open_prices, const map<string, vector<double>>& close_prices) {
+    // Initialize variables
+    string company;
+    double maxDiff = 0;
+    // Iterate over the open prices
+    for (const auto& pair : open_prices) {
+        for (size_t i = 0; i < pair.second.size(); ++i) {
+            double diff = close_prices.at(pair.first)[i] - pair.second[i];
+            if (diff > maxDiff){maxDiff = diff; company = pair.first;}}}
+    return {company, maxDiff};
 }
 
-// Function to find the stock with the highest valuation ([(EndPrice - StartPrice)/StartPrice] x 100%)
-int stockGrowth(const string& filename) {
-    
-    // Open the file
-    ifstream file(filename);
-    // Check if the file is open
-    if (!file.is_open()) {
-        cerr << "Error: could not open file " << filename << endl;
-        return -1;}
-
-    // Find first and last date of each stock
-    string line;
-    int open_idx = -1;
-    int close_idx = -1;
-    int name_idx = -1;
-
-    // Find index of column of the name and volume of stocks
-    if (getline(file, line)) {
-        open_idx = find_colidx(line, "OpeningPrice");
-        close_idx = find_colidx(line, "ClosingPrice");
-        name_idx = find_colidx(line, "Name");
-        if (open_idx == -1 || close_idx == -1 || name_idx == -1) {
-            cerr << "Error: column not found" << endl;
-            return -1;}}
-   
-    // Maps stock name to (firstRow, lastRow)
-    unordered_map<string, pair<int, int>> stockRows;
-    // Maps stock name to (firstPrice, lastPrice)
-    unordered_map<string, pair<double, double>> stockPrices; 
-    int rowIndex = 0;
-
-    // Find the first and last row index of each stock
-    while (getline(file, line)) {
-        stringstream split_str(line);
-        string val;
-        vector<string> row_vals;
-        while (getline(split_str, val, ',')) {row_vals.push_back(val);}
-
-        // Get the stock name
-        string stock_name = row_vals[name_idx];
-        // If the stock is not in the map, add it
-        if (stockRows.find(stock_name) == stockRows.end()) {
-            stockRows[stock_name] = make_pair(rowIndex, rowIndex);
-            stockPrices[stock_name] = make_pair(stod(row_vals[open_idx]), stod(row_vals[close_idx]));
-        } else {
-            stockRows[stock_name].second = rowIndex;
-            stockPrices[stock_name].second = stod(row_vals[close_idx]);
-        }
-        rowIndex++;
-    }
-
-}
-
-// Main function
-int main(){
-
-	// Variable to store the file name
-	string filename = "stocks.csv";
-
-	// Save on current path folder
+int main() {
+    // Save on current path folder
+    string filename = "stocks.csv";
 	string path = "classes/session5/lab5/";
 	filename = path + filename;
 
-	// Call function to get max Volume
-    mostTraded(filename); cout << "\n" << endl;
+    // Read value data
+    auto volume_col = readColData(filename, 6); // Ensure the column index is correct
+    if (volume_col.empty()) {
+        cout << "No value data was loaded." << endl;
+        return 1;
+    }
 
-    // Call function to get highest diff
-    highestDiff(filename); cout << "\n" << endl;
+    auto most_traded = mostTraded(volume_col);
+    cout << "Most Traded Company: " << most_traded.first << " with value " << most_traded.second << endl;
 
-	return 0;
-	
+    // Read opening and closing prices
+    auto open_data = readColData(filename, 3);
+    auto close_data = readColData(filename, 6); 
+    auto high_diff = highDiff(open_data, close_data);
+    cout << "Company with Highest Daily Appreciation: " << high_diff.first 
+    << " with " << high_diff.second << endl;
+
+    return 0;
 }
-
 
 

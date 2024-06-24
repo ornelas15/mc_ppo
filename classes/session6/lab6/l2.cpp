@@ -9,9 +9,7 @@ Take into account the concepts of encapsulation and visibility.
 
 */
 #include "Point.h"
-#include "Square.h"
-#include "Circle.h"
-#include "Rectangle.h"
+#include "Figure.h"
 #include <iostream>	
 using namespace std;
 
