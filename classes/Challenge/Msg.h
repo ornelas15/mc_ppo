@@ -51,7 +51,7 @@ class EmailMsg : public Msg {
   ~EmailMsg() {};
 
   // getType function
-  std::string getType() const override { return "Email"; }
+  std::string getType() const override { return "email"; }
 
   // Operator << overload
   friend std::ostream& operator<<(std::ostream &os, const EmailMsg &email){
@@ -90,7 +90,7 @@ class MobileMsg : public Msg {
   ~MobileMsg() {};
 
   // getType function
-  std::string getType() const override { return "Mobile"; }
+  std::string getType() const override { return "mobile"; }
 
   // Operator << overload
   friend std::ostream& operator<<(std::ostream &os, const MobileMsg &mobile){
