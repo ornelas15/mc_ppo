@@ -17,7 +17,7 @@ int main(){
 	std::vector<User> users;
 
 	// Print part A details:
-	std::cout << "\nPart A: \n\n" << std::endl;
+	std::cout << "\n\n *** Part A*** \n" << std::endl;
 
 	// Create Maria user and print it
 	User maria("Maria", "m@ua.pt", "+351234370500");
@@ -110,7 +110,7 @@ int main(){
 	srcAddr = maria.getMobile();
 	destAddr = manuel.getMobile();
 	MobileMsg mobile1(info, srcAddr, destAddr);
-	std::cout << mobile1 << std::endl;
+	std::cout << "\n" << mobile1 << std::endl;
 
 	// Ask for new mobile message and save input
 	std::cout << "\nnew mobile message (first the content in one line, then the from and to addresses)?:" << std::endl;
@@ -143,7 +143,13 @@ int main(){
 	std::cout << "\n" << mobile2 << "\n" << std::endl;
 
 	// Print ID and type from mobile message
-	std::cout << "m3 id: " << mobile2.getID() << " and type " << mobile2.getType() << std::endl;
+	std::cout << "m3 id: " << mobile2.getID() << " and type " << mobile2.getType() << "\n" << std::endl;
+
+
+	// Part B:
+	std::cout << "\n\n *** Part B *** \n" << std::endl;
+
+	
 
 
 	return 0;
