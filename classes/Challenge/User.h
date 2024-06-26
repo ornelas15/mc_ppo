@@ -23,7 +23,7 @@ class User {
   : name_(name), email_(email), mobile_(mobile), first_sep_(first_sep), second_sep_(second_sep) {};
 
   // Copy Constructor
-  User(const User &u) : name_(u.name_), email_(u.email_), mobile_(u.mobile_), first_sep_(u.first_sep_), second_sep_(u.second_sep_) {};
+  User(const User &other) : name_(other.name_), email_(other.email_), mobile_(other.mobile_), first_sep_(other.first_sep_), second_sep_(other.second_sep_) {};
   
   // Setters
   void setName(std::string name) { name_ = name; }
