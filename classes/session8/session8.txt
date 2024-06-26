@@ -1,0 +1,7 @@
+
+Session 7 of PPOC++:
+
+- 
+
+
+- Move Semantics

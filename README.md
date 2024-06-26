@@ -44,6 +44,16 @@ Session6:
 	- Construction
 	- Contents
 
+Session7:
+	- Classes
+	- Inheritance
+	- Polymorphism
+	- Virtual Functions
+	- Move Semantics
+	
+Session8:
+	- Challenge and Avaliation
+
 ### Installation
 To install the necessary dependencies for this project, follow the steps below.
 ...
