@@ -34,6 +34,9 @@ case $lab_id in
   lab8)
     path="/home/ornelas/Desktop/Ornelas/mc_ppo/classes/session8/lab8"
     ;;
+  chal)
+    path="/home/ornelas/Desktop/Ornelas/mc_ppo/classes/Challenge"
+    ;;
   *)
     echo "Invalid lab ID provided."
     exit 1
