@@ -48,7 +48,7 @@ class EmailMsg : public Msg {
   std::string getDestAddr() const { return destAddr_; }
 
   // Destructor
-  ~EmailMsg() {};
+  ~EmailMsg() override {};
 
   // getType function
   std::string getType() const override { return "email"; }
@@ -87,7 +87,7 @@ class MobileMsg : public Msg {
   std::string getDestPhoneNo() const { return destPhoneNo_; }
 
   // Destructor
-  ~MobileMsg() {};
+  ~MobileMsg() override {};
 
   // getType function
   std::string getType() const override { return "mobile"; }
