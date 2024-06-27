@@ -61,7 +61,7 @@ int main(){
 	auto email_msg3 = std::make_unique<EmailMsg>(msg4, ana.getEmail(), ze.getEmail());
 	auto mobile_msg2 = std::make_unique<MobileMsg>(msg5, bernardo.getMobile(), maria.getMobile());
 
-	// Add messages to manager
+	// Add unique messages to manager
 	manager.addMsg(std::move(email_msg1));
 	manager.addMsg(std::move(email_msg2));
 	manager.addMsg(std::move(mobile_msg1));
