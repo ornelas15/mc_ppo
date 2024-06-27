@@ -54,7 +54,7 @@ int main(){
 	manager.addUser(bernardo.getEmail(), bernardo);
 	manager.addUser(ze.getEmail(), ze);
 
-	// Create unique pointers to messages
+	// Create unique pointers to messages and remove them from scope
 	auto email_msg1 = std::make_unique<EmailMsg>(msg1, maria.getEmail(), ana.getEmail());
 	auto email_msg2 = std::make_unique<EmailMsg>(msg2, ana.getEmail(), maria.getEmail());
 	auto mobile_msg1 = std::make_unique<MobileMsg>(msg3, maria.getMobile(), bernardo.getMobile());
