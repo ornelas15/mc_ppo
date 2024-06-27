@@ -1,5 +1,5 @@
 /*  
-Lab 8 - 26-June-2024
+26-June-2024
 David Ornelas
 Challenge
 
