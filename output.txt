@@ -1,9 +1,0 @@
-user Ana a@ua.pt +351910910910
-user Bernardo b@ua.pt +351234370111
-user Maria m@ua.pt +351234370500
-user Ze ze@ua.pt +351234234234
-email m@ua.pt a@ua.pt The PpO exam is today!
-email a@ua.pt m@ua.pt I am ready :-)
-mobile +351234370500 +351234370111 The PpO exam is indeed today!
-email a@ua.pt ze@ua.pt The content is what I studied.
-mobile +351234370111 +351234370500 I love programming.
