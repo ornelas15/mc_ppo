@@ -35,30 +35,31 @@ Session4:
 	- Vectors.  
 	- Maps.  
 		
-Session5:
-	- Containers.
-	- Algorithm Library.
+Session5:  
+	- Containers.  
+	- Algorithm Library.  
 	
-Session6:
-	- Classes
-	- Construction
-	- Contents
-
-Session7:
-	- Classes
-	- Inheritance
-	- Polymorphism
-	- Virtual Functions
-	- Move Semantics
+Session6:  
+	- Classes  
+	- Construction  
+	- Contents  
+ 
+Session7:  
+	- Classes  
+	- Inheritance  
+	- Polymorphism  
+	- Virtual Functions  
+	- Move Semantics  
 	
-Session8:
-	- Challenge and Avaliation
-
-### Installation
-To install the necessary dependencies for this project, follow the steps below.
-...
+Session8:  
+	- Challenge and Avaliation  
 
 ### Usage
-...
+Make sure you call on the main folder:  
+```
+./run.sh lab'nr' l'nr'.cpp
+```
+
+Call the bash file: run.sh foldername ex_number.  
 
 
